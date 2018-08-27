@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group
+        android:id="@+id/group_main"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_home"
+            android:icon="@drawable/ic_home_24dp"
+            android:title="@string/nav_home"/>
+        <item
+            android:id="@+id/navigation_search"
+            android:icon="@drawable/ic_search_24dp"
+            android:title="@string/nav_search"/>
+        <item
+            android:id="@+id/navigation_downloaded"
+            android:icon="@drawable/ic_download_24dp"
+            android:title="@string/nav_downloaded"/>
+        <item
+            android:id="@+id/navigation_favorite"
+            android:icon="@drawable/ic_favorite_24dp"
+            android:title="@string/nav_favorite"/>
+        <item
+            android:id="@+id/navigation_playlist"
+            android:icon="@drawable/ic_playlist_24dp"
+            android:title="@string/nav_playlist"/>
+    </group>
+    <group
+        android:id="@+id/group_function"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_settings"
+            android:icon="@drawable/ic_settings_24dp"
+            android:title="@string/nav_settings"/>
+        <item
+            android:id="@+id/navigation_about"
+            android:icon="@drawable/ic_about_24dp"
+            android:title="@string/nav_about"/>
+    </group>
+</menu>
