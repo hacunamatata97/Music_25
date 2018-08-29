@@ -2,19 +2,19 @@ package com.framgia.music_25.screen.home;
 
 import com.framgia.music_25.screen.BasePresenter;
 
-public interface HomeContract {
-
-    /*
-    * HomeView
-    */
+/**
+ * This specifies the contract between the view and the presenter.
+ */
+interface HomeContract {
+    /**
+     * View.
+     */
     interface View {
-
     }
 
-    /*
-     * HomePresenter
+    /**
+     * Presenter.
      */
     interface Presenter extends BasePresenter<View> {
-
     }
 }
