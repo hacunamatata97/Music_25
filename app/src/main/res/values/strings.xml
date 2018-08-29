@@ -13,4 +13,5 @@
     <string name="description_button_play">Play button</string>
     <string name="description_button_next">Next button</string>
     <string name="temp_song_name">Love you and love me Love you and love me</string>
+    <string name="text_see_all"><![CDATA[See All >>]]></string>
 </resources>
