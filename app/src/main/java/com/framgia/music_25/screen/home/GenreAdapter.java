@@ -15,12 +15,14 @@ public class GenreAdapter extends RecyclerView.Adapter<GenreAdapter.GenreViewHol
 
     private Context mContext;
     private List<String> mGenreList;
+    private HomeContract.Presenter mHomePresenter;
     private OnGenreClickListener mClickListener;
 
-    public GenreAdapter(Context context, List<String> genreList,
+    public GenreAdapter(Context context, List<String> genreList, HomeContract.Presenter homePresenter,
             OnGenreClickListener onGenreClickListener) {
         mContext = context;
         mGenreList = genreList;
+        mHomePresenter = homePresenter;
         mClickListener = onGenreClickListener;
     }
 
@@ -53,7 +55,7 @@ public class GenreAdapter extends RecyclerView.Adapter<GenreAdapter.GenreViewHol
             super(itemView);
             mGenreName = itemView.findViewById(R.id.text_genre_name);
             mSeeAll = itemView.findViewById(R.id.text_see_all);
-            mRecyclerSongs = itemView.findViewById(R.id.recycler_songs_in_genre);
+            mRecyclerSongs = itemView.findViewById(R.id.recycler_tracks_in_genre);
         }
 
         private void bindData(Context context, int position, OnGenreClickListener listener) {
@@ -65,7 +67,7 @@ public class GenreAdapter extends RecyclerView.Adapter<GenreAdapter.GenreViewHol
         }
 
         private void setupSongRecycler(Context context, String genreName) {
-
+            mHomePresenter.loadTracksByGenre(genreName);
         }
 
         @Override

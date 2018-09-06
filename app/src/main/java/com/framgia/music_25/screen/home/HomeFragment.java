@@ -11,7 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 import com.framgia.music_25.R;
+import com.framgia.music_25.data.repository.TrackRepository;
 import com.framgia.music_25.data.source.local.GenreTitle;
+import com.framgia.music_25.data.source.remote.TrackRemoteDataSource;
 import com.framgia.music_25.screen.BaseFragment;
 import java.util.Arrays;
 import java.util.List;
@@ -44,7 +46,9 @@ public class HomeFragment extends BaseFragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mPresenter = new HomePresenter(this);
+        TrackRepository trackRepository =
+                TrackRepository.getInstance(TrackRemoteDataSource.getInstance());
+        mPresenter = new HomePresenter(this, trackRepository);
     }
 
     @Nullable
@@ -66,7 +70,7 @@ public class HomeFragment extends BaseFragment
     }
 
     private void setupRecycler() {
-        GenreAdapter genreAdapter = new GenreAdapter(mContext, mGenreTitles, this);
+        GenreAdapter genreAdapter = new GenreAdapter(mContext, mGenreTitles, mPresenter, this);
         mRecyclerGenres.setLayoutManager(new LinearLayoutManager(mContext));
         mRecyclerGenres.setAdapter(genreAdapter);
     }
